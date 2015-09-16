@@ -1,0 +1,34 @@
+﻿<Window x:Class="MeatInvtory.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MeatInvtory"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" WindowStyle="ThreeDBorderWindow" Icon="images.ico">
+
+    <Grid>
+        <Button x:Name="button_Add" Content="Add" HorizontalAlignment="Right" Height="20" Margin="0,11,103,0" VerticalAlignment="Top" Width="70" Click="button_Add_Click" Background="#FFDDDDDD"/>
+        <ListView Margin="10,10,178,10" x:Name="MainList" SelectionChanged="MainList_SelectionChanged" Background="#FFFBFBFB" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Amount" Width="50" DisplayMemberBinding="{Binding Amount}" />
+                    <GridViewColumn Header="Info" Width="120" DisplayMemberBinding="{Binding ProductInfo}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="button_Remove" Content="Remove" HorizontalAlignment="Right" Height="20" Margin="0,11,28,0" VerticalAlignment="Top" Width="70" Click="button_Rem_Click"/>
+        <Button x:Name="button_AAm" Content="+" HorizontalAlignment="Right" Height="20" Margin="0,36,143,0" VerticalAlignment="Top" Width="30" Click="button_AAm_Click"/>
+        <Button x:Name="button_SAm" Content="-" HorizontalAlignment="Right" Height="20" Margin="0,36,103,0" VerticalAlignment="Top" Width="30" Click="button_SAm_Click"/>
+        <Button x:Name="button_Update" Content="Update" HorizontalAlignment="Right" Height="20" Margin="0,36,28,0" VerticalAlignment="Top" Width="70" Click="button_Update_Click"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Height="16" Margin="0,65,103,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Text="Name:"/>
+        <TextBox x:Name="NameTB" HorizontalAlignment="Right" Height="19" Margin="0,81,28,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Right" Height="16" Margin="0,104,103,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Text="Amont:"/>
+        <TextBox x:Name="AmountTB" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Right" Height="18" Margin="0,120,28,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145"/>
+        <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Right" Height="16" Margin="0,144,103,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Text="Info:"/>
+        <TextBox x:Name="InfoTB" HorizontalAlignment="Right" Height="86" Margin="0,160,28,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145"/>
+        <Button x:Name="button_Clear" Content="Clear" HorizontalAlignment="Right" Height="20" Margin="0,251,28,0" VerticalAlignment="Top" Width="145" Click="button_Clear_Click"/>
+
+    </Grid>
+</Window>
